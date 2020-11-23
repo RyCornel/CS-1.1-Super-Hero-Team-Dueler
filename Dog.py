@@ -7,12 +7,5 @@ class Dog:
     def bark(self):
         print("Woof!")
 
-my_dog = Dog("Rex", "SuperDog")
-print(my_dog)
-print(my_dog.name)
-print(my_dog.breed)
-print(my_dog.bark())
-#my_dog.breed = "SuperDog"
-#print(my_dog.breed)
 
 
