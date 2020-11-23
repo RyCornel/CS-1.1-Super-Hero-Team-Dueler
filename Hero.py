@@ -8,7 +8,7 @@ class Hero:
     
     def fight(self, opponent):
         self.opponent = opponent
-        hero1 = self
+        hero1 = opponent
         hero2 = opponent
         fighters = (hero1, hero2)
         print(random.choice(fighters))
@@ -24,4 +24,7 @@ if __name__ == "__main__":
     hero2 = Hero("Dumbledore")
 
     hero1.fight(hero2)
+
+
+
 
