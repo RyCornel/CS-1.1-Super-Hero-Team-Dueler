@@ -37,17 +37,29 @@ class Hero:
             damage_amount += ability.defend()
             return damage_amount
 
+    def take_damage(self, damage):
+        self.current_health -= damage - self.defend()
+
+
+    def is_alive(self):
+        if current_health <= 0:
+            return False
+        else:f
+            return True  
+
 
 if __name__ == "__main__":
     ability = Ability("Great Debugging", 50)
     another_ability = Ability("Smarty Pants", 90)
     hero = Hero("Grace Hopper", 200)
+    shield = Armor("Shield", 50)
+    hero.add_armor(shield)
+    hero.take_damage(50)
     hero.add_ability(ability)
     hero.add_ability(another_ability)
     print(hero.name)
     print(hero.current_health)
-    print(hero.abilities)
-    print(hero.attack())
+   
 
 
 
