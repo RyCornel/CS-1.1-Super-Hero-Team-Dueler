@@ -17,11 +17,24 @@ class Hero:
         fighters = (hero1, hero2)
         print(random.choice(fighters))
 
+    def add_ability(self, ability):
+        self.abilities.append(ability)
+
+    def attack(self):
+
+        for ability in self.abilities:
+            total += ability.attack()
+            print("Attack" %total)
+            return total 
+
 
 if __name__ == "__main__":
-    my_hero = Hero("Grace Hopper", 200)
-    print(my_hero.name)
-    print(my_hero.current_health)
+    ability = Ability("Great Debugging", 50)
+    hero = Hero("Grace Hopper", 200)
+    hero.add_ability(ability)
+    print(hero.name)
+    print(hero.current_health)
+    print(hero.abilities)
 
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
