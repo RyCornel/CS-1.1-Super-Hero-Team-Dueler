@@ -9,16 +9,25 @@ class Hero:
         self.current_health = starting_health
         self.abilities = list()
         self.armors = list()
+
     
     def fight(self, opponent):
-        self.opponent = opponent
-        hero1 = opponent
-        hero2 = opponent
-        fighters = (hero1, hero2)
-        print(random.choice(fighters))
+        if (opponent.abilities == []) and (self.abilities == []):
+            print("Draw")
+
+            else: 
+                while self.current_health and opponent.current_health >= 0:
+                    opponent.take_damage(self.attack())
+                    self.take_damage(opponent.attack())
+                
+                
+
+        
+
 
     def add_ability(self, ability):
         self.abilities.append(ability)
+
 
     def attack(self):
         total_damage = 0
@@ -27,8 +36,10 @@ class Hero:
             total_damage += ability.attack()
             return total_damage
 
+
     def add_armor(self, armor):
         self.armors.append(armor)
+
 
     def defend(self):
         damage_amount = 0
@@ -37,6 +48,7 @@ class Hero:
             damage_amount += ability.defend()
             return damage_amount
 
+
     def take_damage(self, damage):
         self.current_health -= damage - self.defend()
 
@@ -44,8 +56,10 @@ class Hero:
     def is_alive(self):
         if current_health <= 0:
             return False
-        else:f
+        else:
             return True  
+
+    
 
 
 if __name__ == "__main__":
