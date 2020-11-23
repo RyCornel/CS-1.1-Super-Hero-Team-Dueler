@@ -30,6 +30,13 @@ class Hero:
     def add_armor(self, armor):
         self.armors.append(armor)
 
+    def defend(self):
+        damage_amount = 0
+
+        for ability in self.abilities:
+            damage_amount += ability.defend()
+            return damage_amount
+
 
 if __name__ == "__main__":
     ability = Ability("Great Debugging", 50)
