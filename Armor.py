@@ -1,4 +1,3 @@
-import Hero
 import random
 class Armor: 
     def __init__(self, name, max_block):

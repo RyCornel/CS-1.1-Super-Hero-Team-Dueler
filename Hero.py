@@ -1,3 +1,5 @@
+from Ability import Ability
+from Armor import Armor
 import random
 
 class Hero:
@@ -5,6 +7,8 @@ class Hero:
         self.name = name
         self.starting_health = starting_health
         self.current_health = starting_health
+        self.abilities = list()
+        self.armors = list()
     
     def fight(self, opponent):
         self.opponent = opponent

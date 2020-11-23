@@ -1,4 +1,3 @@
-import Hero
 import random
 
 class Ability:
