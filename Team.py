@@ -22,6 +22,6 @@ class Team:
     def add_hero(self, Hero):
         self.heroes.append(Hero)
 
-    
+        
         
     

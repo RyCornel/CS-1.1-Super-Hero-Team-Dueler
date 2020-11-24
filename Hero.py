@@ -10,6 +10,8 @@ class Hero:
         self.current_health = starting_health
         self.abilities = list()
         self.armors = list()
+        self.deaths = 0
+        self.kills = 0
 
     
     def fight(self, opponent):
@@ -67,6 +69,13 @@ class Hero:
         else:
             return True  
 
+    
+    def add_kill(self, num_kills):
+        self.kills += num_kills
+
+
+    def add_death(self, num_deaths):
+        self.deaths += num_deaths
     
 #------------------Tests--------------------#
 
