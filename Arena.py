@@ -42,3 +42,49 @@ class Arena:
                 hero.add_armor(self.create_armor())
 
         return hero
+
+    
+    def build_team_uno(self):
+        numOfTeamMembers = int(input("How many members would you like on Team One?\n"))
+        for i in range(numOfTeamMembers):
+            hero = self.create_hero()
+            self.team_uno.add_hero(Hero)
+
+        
+    def build_team_dos(self):
+        numOfTeamMembers = int(input("How many members would you like on Team Two?\n"))
+        for i in range(numOfTeamMembers):
+            hero = self.create_hero()
+            self.team_dos.add_hero(Hero)
+
+    
+    def team_battle(self):
+        self.team_uno.attack(self.team_dos)
+
+    
+    def show_stats(self):
+        print("\n")
+        print(self.team_uno.name + "statistics: ")
+        self.team_uno.stats()
+        print("\n")
+        print(self.team_dos.name + " statistics: ")
+        self.team_dos.stats()
+        print("\n")
+
+        team_kills = 0
+        team_deaths = 0
+        for hero in self.team_uno.heroes:
+            team_kills += hero.kills
+            team_deaths += hero.deaths
+        if team_deaths == 0:
+            team_deaths = 1
+        print(self.team_uno.name + " average K/D was: " + str(team_kills/team_deaths))
+        print(self.team_dos.name + " average K/D was: " + str(team_kills/team_deaths))
+
+        for hero in self.team_uno.heroes:
+            if hero.deaths == 0:
+                print("survived from " + self.team_uno.name + ": " + hero.name)
+
+        for hero in self.team_dos.heroes:
+            if hero.deaths == 0:
+                print("survived from " + self.team_dos.name + ": " + hero.name)
