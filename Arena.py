@@ -7,3 +7,5 @@ from Team import Team
 
 class Arena:
     def __init__(self):
+        self.team_uno = Team("Team-Uno")
+        self.team_dos = Team("Team-Dos")
