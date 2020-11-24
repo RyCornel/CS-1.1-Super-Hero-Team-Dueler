@@ -25,9 +25,13 @@ class Hero:
                 
             if self.is_alive() == True:
                 print(f"{self.name} is the winner")
+                self.add_kill += 1
+                opponent.add_death += 1
                     
             else: 
                 print(f"{opponent.name} is the winner")
+                opponent.add_kill += 1
+                self.add_death +=1
 
 
     def add_weapon(self, weapon):
