@@ -1,5 +1,6 @@
 from Ability import Ability
 from Armor import Armor
+from Weapon import Weapon
 import random
 
 class Hero:
@@ -27,7 +28,8 @@ class Hero:
                 print(f"{opponent.name} is the winner")
 
 
-        
+    def add_weapon(self, weapon):
+        self.abilities.append(weapon)
 
 
     def add_ability(self, ability):
