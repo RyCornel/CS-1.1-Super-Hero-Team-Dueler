@@ -26,5 +26,9 @@ class Team:
         for Hero in self.heroes:
             kd = Hero.kills / Hero.deaths
             print(f"{Hero.name} Kill/Deaths: {kd}")
+
+    def revive_heroes(self, health = 100):
+        for Hero in self.heroes:
+            Hero.current_health = health
         
     
